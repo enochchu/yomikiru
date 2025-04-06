@@ -325,7 +325,7 @@ const createWindow = (link?: string) => {
         height: 800,
         minWidth: 853,
         minHeight: 480,
-        frame: false,
+        frame: true,
         backgroundColor: "#000000",
         show: false,
         titleBarStyle: process.platform === "win32" ? "hidden" : "default",

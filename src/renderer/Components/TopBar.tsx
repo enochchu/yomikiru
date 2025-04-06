@@ -262,44 +262,8 @@ const TopBar = (): ReactElement => {
                         }}
                         tabIndex={-1}
                     />
-                    <span className="totalPage">%</span>
+                    <span className="totalPage">%</span>    
                 </label>
-                {process.platform !== "win32" ? (
-                    <>
-                        <button
-                            tabIndex={-1}
-                            id="minimizeBtn"
-                            title="Minimize"
-                            onFocus={(e) => e.currentTarget.blur()}
-                            onClick={() => window.electron.getCurrentWindow().minimize()}
-                        >
-                            <FontAwesomeIcon icon={faMinus} />
-                        </button>
-                        <button
-                            tabIndex={-1}
-                            id="maximizeRestoreBtn"
-                            onFocus={(e) => e.currentTarget.blur()}
-                            title={isMaximized ? "Restore" : "Maximize"}
-                            onClick={() => {
-                                if (isMaximized) return window.electron.getCurrentWindow().restore();
-                                window.electron.getCurrentWindow().maximize();
-                            }}
-                        >
-                            <FontAwesomeIcon icon={isMaximized ? faWindowRestore : faWindowMaximize} />
-                        </button>
-                        <button
-                            tabIndex={-1}
-                            id="closeBtn"
-                            title="Close"
-                            onFocus={(e) => e.currentTarget.blur()}
-                            onClick={() => window.electron.getCurrentWindow().close()}
-                        >
-                            <FontAwesomeIcon icon={faTimes} />
-                        </button>
-                    </>
-                ) : (
-                    ""
-                )}
             </div>
         </div>
     );
