@@ -8,3 +8,5 @@ yarn-error.log
 yarn.lock
 
 _github assets
+/.idea/
+/.DS_Store
