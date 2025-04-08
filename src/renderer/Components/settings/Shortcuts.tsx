@@ -4,7 +4,7 @@ import { removeShortcuts, setShortcuts } from "../../store/shortcuts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
 
-const reservedKeys = ["ctrl+shift+i", "escape", "tab", "ctrl+n", "ctrl+w", "ctrl+r", "ctrl+shift+r"];
+const reservedKeys = ["ctrl+shift+i", "escape", "tab", "ctrl+n", "ctrl+q", "ctrl+r", "ctrl+shift+r"];
 const SHORTCUT_LIMIT = 4;
 
 const ShortcutInput = ({ command }: { command: ShortcutCommands }) => {
@@ -149,7 +149,7 @@ const Shortcuts = ({
                     <tr>
                         <td>Close Window</td>
                         <td>
-                            <code>ctrl+w</code>
+                            <code>ctrl+q</code>
                         </td>
                     </tr>
                     <tr>

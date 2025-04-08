@@ -640,7 +640,7 @@ app.on("ready", () => {
                 },
                 {
                     label: "Close",
-                    accelerator: process.platform === "darwin" ? "Cmd+W" : "Ctrl+W",
+                    accelerator: process.platform === "darwin" ? "Cmd+Q" : "Ctrl+Q",
                     click: (_, window) => window?.close(),
                 },
             ],
