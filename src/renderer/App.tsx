@@ -405,7 +405,8 @@ const App = (): ReactElement => {
                 appSettings.updateCheckerEnabled,
                 window.electron.getCurrentWindow().id,
                 appSettings.skipMinorUpdate,
-                appSettings.autoDownloadUpdate
+                appSettings.autoDownloadUpdate,
+                appSettings.disableUpdates
             );
         });
         window.electron.ipcRenderer.on("askBeforeClose:query", () => {

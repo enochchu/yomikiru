@@ -14,6 +14,7 @@ const settingSchema = z
         askBeforeClosing: z.boolean(),
         skipMinorUpdate: z.boolean(),
         autoDownloadUpdate: z.boolean(),
+        disableUpdates: z.boolean(),
         /**
          * Open chapter in reader directly, one folder inside of base manga dir.
          */
@@ -244,6 +245,7 @@ const settingSchema = z
         locationListSortType: "normal",
         locationListSortBy: "name",
         updateCheckerEnabled: true,
+        disableUpdates: false,
         askBeforeClosing: false,
         skipMinorUpdate: false,
         autoDownloadUpdate: false,

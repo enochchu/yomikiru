@@ -474,8 +474,11 @@ const registerListener = () => {
                     if (e.response === 1) shell.openExternal("https://github.com/mienaiyami/yomikiru");
                 });
     }, 1000 * 30);
-    ipcMain.on("checkForUpdate:response", (e, res, windowId, skipMinor, autoDownload) => {
+    ipcMain.on("checkForUpdate:response", (e, res, windowId, skipMinor, autoDownload, disableUpdates) => {
         if (res) {
+            if (disableUpdates) {
+                return;
+            }
             checkForUpdate(windowId, skipMinor, false, autoDownload);
             setInterval(() => {
                 checkForUpdate(windowId, skipMinor, false, autoDownload);

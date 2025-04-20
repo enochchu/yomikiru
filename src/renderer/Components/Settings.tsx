@@ -22,6 +22,7 @@ import ThemeCont from "./settings/ThemeCont";
 import Shortcuts from "./settings/Shortcuts";
 import Usage from "./settings/Usage";
 import { renderPDF } from "../utils/pdf";
+import ExtraExtraSettings from "./settings/ExtraExtraSettings";
 
 const TAB_INFO = {
     settings: [0, "Settings"],
@@ -29,6 +30,7 @@ const TAB_INFO = {
     makeTheme: [2, "Theme Maker"],
     about: [3, "About"],
     extras: [4, "Extras"],
+    extraextra: [5, "Extra Extra"],
 } as const;
 
 //todo: divide into components
@@ -185,6 +187,12 @@ const Settings = (): ReactElement => {
                             onClick={() => setCurrentTab(TAB_INFO.extras[0])}
                         >
                             {TAB_INFO.extras[1]}
+                        </button>
+                        <button
+                          className={`tabBtn ${currentTab === TAB_INFO.extraextra[0] ? "selected " : ""}`}
+                          onClick={() => setCurrentTab(TAB_INFO.extraextra[0])}
+                        >
+                            {TAB_INFO.extraextra[1]}
                         </button>
                     </div>
                     <div
@@ -1641,6 +1649,25 @@ const Settings = (): ReactElement => {
                                         </button>
                                     </div>
                                 </div>
+                                <div className="settingItem3">
+                                    <h3>Enoch Settings</h3>
+                                    <div className="main row">
+                                        <div className="toggleItem">
+                                            <InputCheckbox
+                                              checked={false}
+                                              className="noBG"
+                                              onChange={(e) => {
+                                              }}
+                                              disabled={false}
+                                              labelAfter="Disable New Version Check"
+                                            />
+                                            <div className="desc">
+                                                Automatically update AniList progress when chapter is read over 70%.
+                                                Only works if chapter names are well formatted.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className={`tab ${currentTab === TAB_INFO.shortcutKeys[0] ? "selected " : ""}`}>
@@ -1806,6 +1833,9 @@ const Settings = (): ReactElement => {
                         <div className={`tab ${currentTab === TAB_INFO.extras[0] ? "selected " : ""}`}>
                             <h1>Usage & Features</h1>
                             <Usage scrollIntoView={scrollIntoView} />
+                        </div>
+                        <div className={`tab ${currentTab === TAB_INFO.extraextra[0] ? "selected " : ""}`}>
+                            <ExtraExtraSettings />
                         </div>
                     </div>
                 </div>
